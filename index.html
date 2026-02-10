@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Laut-Land Arena</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <h1>⚔️ Laut-Land Arena</h1>
+        <div id="star-count">⭐ 0</div>
+      </header>
+
+      <section id="screen-start" class="screen active">
+        <p id="boot-status" class="boot">Lädt…</p>
+        <div class="stack">
+          <button id="btn-play" class="main-btn">🕹️ Kampf starten</button>
+          <button id="btn-map" class="main-btn">🗺️ Karte laufen</button>
+          <button id="btn-dex" class="main-btn">📘 Dex</button>
+        </div>
+      </section>
+
+      <section id="screen-game" class="screen">
+        <div class="battlefield">
+          <div class="enemy-side">
+            <div class="hp-box"><span>Rivale</span><div class="hp"><div id="hp-enemy"></div></div></div>
+            <img id="enemy-monster" src="assets/img/monsters/monster_flora.svg" alt="Gegner" />
+            <div id="enemy-mood" class="mood">😶</div>
+          </div>
+          <div class="player-side">
+            <div class="hp-box"><span>Du</span><div class="hp"><div id="hp-player"></div></div></div>
+            <img id="player-monster" src="assets/img/ui/avatar.svg" alt="Spieler" />
+          </div>
+        </div>
+
+        <div class="game-head">
+          <div id="word-display" class="word-display">H _ se</div>
+          <button id="btn-word-audio" class="audio-btn" aria-label="Wort anhören">🔊</button>
+        </div>
+
+        <div id="game-feedback" class="feedback">✨ Treffer</div>
+        <div id="answer-buttons" class="answers-grid"></div>
+
+        <div class="row">
+          <button id="btn-next" class="mini-btn">⏭️ nächstes</button>
+          <button class="mini-btn back-btn" data-back>↩️ zurück</button>
+        </div>
+      </section>
+
+      <section id="screen-dex" class="screen">
+        <div id="dex-grid" class="dex-grid"></div>
+        <div class="row">
+          <button id="btn-reset" class="mini-btn">🧹 Reset</button>
+          <button class="mini-btn back-btn" data-back>↩️ zurück</button>
+        </div>
+      </section>
+
+      <section id="screen-map" class="screen">
+        <div id="map-progress" class="map-progress"></div>
+        <div id="map-grid" class="map-grid"></div>
+        <p id="duel-hint" class="hint">⬇️ Laufe weiter</p>
+
+        <div class="dpad">
+          <button data-move="up">⬆️</button>
+          <button data-move="left">⬅️</button>
+          <button data-move="down">⬇️</button>
+          <button data-move="right">➡️</button>
+        </div>
+
+        <div class="row">
+          <button id="btn-start-duel" class="mini-btn">⚔️ Duell</button>
+          <button class="mini-btn back-btn" data-back>↩️ zurück</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
