@@ -38,16 +38,12 @@ const bindTap = (fn) => (event) => {
 };
 
 async function init() {
-  try {
-    state.words = await loadWords();
-  } catch {
-    document.getElementById("boot-status").textContent = "⚠️ Daten fehlen";
-  }
+  state.words = await loadWords();
 
   wireActions();
   renderStars(state.progress.stars);
   switchScreen("start");
-  document.getElementById("boot-status").textContent = "✅ Bereit";
+  document.getElementById("boot-status").textContent = state.words.length ? "✅ Bereit" : "⚠️ Keine Wörter";
 }
 
 function wireActions() {
@@ -58,7 +54,9 @@ function wireActions() {
   document.getElementById("btn-word-audio").addEventListener("click", bindTap(playCurrentWord));
   document.getElementById("btn-next").addEventListener("click", bindTap(loadRound));
   document.getElementById("btn-reset").addEventListener("click", bindTap(resetAll));
-  document.getElementById("btn-start-duel").addEventListener("click", bindTap(startGame));
+  document.getElementById("btn-start-duel").addEventListener("click", bindTap(() => {
+    if (onDuelTile(state.progress.player)) startGame();
+  }));
 
   document.querySelectorAll("[data-move]").forEach((btn) => {
     btn.addEventListener("click", bindTap(() => movePlayer(btn.dataset.move)));
@@ -73,6 +71,7 @@ function wireActions() {
 }
 
 function startGame() {
+  if (!state.words.length) return;
   switchScreen("game");
   if (state.hp.player <= 0 || state.hp.enemy <= 0) state.hp = { player: 100, enemy: 100 };
   loadRound();

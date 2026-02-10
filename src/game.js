@@ -5,6 +5,18 @@ const BUTTONS = {
   zwielaut: ["au", "ei", "eu"],
 };
 
+const FALLBACK_WORDS = [
+  { id: "hase", display: "H _ se", answer: "a", category: "vokal", level: 1, image: "assets/img/monsters/monster_flora.svg", audio_word: "assets/audio/woerter/hase.mp3" },
+  { id: "igel", display: "_ gel", answer: "i", category: "vokal", level: 1, image: "assets/img/monsters/monster_wave.svg", audio_word: "assets/audio/woerter/igel.mp3" },
+  { id: "ofen", display: "_ fen", answer: "o", category: "vokal", level: 1, image: "assets/img/monsters/monster_ember.svg", audio_word: "assets/audio/woerter/ofen.mp3" },
+  { id: "baer", display: "B _ r", answer: "ä", category: "umlaut", level: 2, image: "assets/img/monsters/monster_flora.svg", audio_word: "assets/audio/woerter/baer.mp3" },
+  { id: "floete", display: "Fl _ te", answer: "ö", category: "umlaut", level: 2, image: "assets/img/monsters/monster_wave.svg", audio_word: "assets/audio/woerter/floete.mp3" },
+  { id: "tuer", display: "T _ r", answer: "ü", category: "umlaut", level: 2, image: "assets/img/monsters/monster_ember.svg", audio_word: "assets/audio/woerter/tuer.mp3" },
+  { id: "maus", display: "M _ s", answer: "au", category: "zwielaut", level: 3, image: "assets/img/monsters/monster_flora.svg", audio_word: "assets/audio/woerter/maus.mp3" },
+  { id: "seil", display: "S _ l", answer: "ei", category: "zwielaut", level: 3, image: "assets/img/monsters/monster_wave.svg", audio_word: "assets/audio/woerter/seil.mp3" },
+  { id: "eule", display: "_ le", answer: "eu", category: "zwielaut", level: 3, image: "assets/img/monsters/monster_ember.svg", audio_word: "assets/audio/woerter/eule.mp3" },
+];
+
 export const MAP = {
   width: 8,
   height: 6,
@@ -13,9 +25,15 @@ export const MAP = {
 };
 
 export async function loadWords() {
-  const response = await fetch("assets/data/words.json");
-  if (!response.ok) throw new Error("Wortdaten konnten nicht geladen werden.");
-  return response.json();
+  try {
+    const response = await fetch("assets/data/words.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("no words file");
+    const data = await response.json();
+    if (Array.isArray(data) && data.length) return data;
+  } catch {
+    // Öffnen per file:// kann fetch blockieren -> lokaler Fallback hält das Spiel spielbar.
+  }
+  return FALLBACK_WORDS;
 }
 
 export function currentCategory(progress) {

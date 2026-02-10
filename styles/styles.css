@@ -45,6 +45,11 @@ h1 { margin: 0; font-size: clamp(1.3rem, 2.8vw, 2rem); }
 .main-btn { background: linear-gradient(#5d86f3, #4269d0); color: #fff; }
 .mini-btn { background: linear-gradient(#f6f8ff, #dce5ff); }
 
+.main-btn:disabled,.mini-btn:disabled,.sound-tile:disabled,.audio-btn:disabled,.dpad button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .battlefield {
   background: repeating-linear-gradient(0deg, #e9f8ff 0 7px, #ddf0f7 7px 14px);
   border: 3px solid #7ca8bb;
