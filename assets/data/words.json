@@ -1,0 +1,84 @@
+[
+  {
+    "id": "hase",
+    "display": "H _ se",
+    "answer": "a",
+    "category": "vokal",
+    "level": 1,
+    "image": "assets/img/monsters/hase.png",
+    "audio_word": "assets/audio/woerter/hase.mp3",
+    "audio_slow": "assets/audio/woerter/hase_langsam.mp3"
+  },
+  {
+    "id": "igel",
+    "display": "_ gel",
+    "answer": "i",
+    "category": "vokal",
+    "level": 1,
+    "image": "assets/img/monsters/igel.png",
+    "audio_word": "assets/audio/woerter/igel.mp3"
+  },
+  {
+    "id": "ofen",
+    "display": "_ fen",
+    "answer": "o",
+    "category": "vokal",
+    "level": 1,
+    "image": "assets/img/monsters/ofen.png",
+    "audio_word": "assets/audio/woerter/ofen.mp3"
+  },
+  {
+    "id": "baer",
+    "display": "B _ r",
+    "answer": "ä",
+    "category": "umlaut",
+    "level": 2,
+    "image": "assets/img/monsters/baer.png",
+    "audio_word": "assets/audio/woerter/baer.mp3"
+  },
+  {
+    "id": "floete",
+    "display": "Fl _ te",
+    "answer": "ö",
+    "category": "umlaut",
+    "level": 2,
+    "image": "assets/img/monsters/floete.png",
+    "audio_word": "assets/audio/woerter/floete.mp3"
+  },
+  {
+    "id": "tuer",
+    "display": "T _ r",
+    "answer": "ü",
+    "category": "umlaut",
+    "level": 2,
+    "image": "assets/img/monsters/tuer.png",
+    "audio_word": "assets/audio/woerter/tuer.mp3"
+  },
+  {
+    "id": "maus",
+    "display": "M _ s",
+    "answer": "au",
+    "category": "zwielaut",
+    "level": 3,
+    "image": "assets/img/monsters/maus.png",
+    "audio_word": "assets/audio/woerter/maus.mp3"
+  },
+  {
+    "id": "seil",
+    "display": "S _ l",
+    "answer": "ei",
+    "category": "zwielaut",
+    "level": 3,
+    "image": "assets/img/monsters/seil.png",
+    "audio_word": "assets/audio/woerter/seil.mp3"
+  },
+  {
+    "id": "eule",
+    "display": "_ le",
+    "answer": "eu",
+    "category": "zwielaut",
+    "level": 3,
+    "image": "assets/img/monsters/eule.png",
+    "audio_word": "assets/audio/woerter/eule.mp3"
+  }
+]
