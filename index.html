@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Laut-Land</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <h1>🧙 Laut-Land</h1>
+        <div id="star-count">⭐ 0</div>
+      </header>
+
+      <section id="screen-start" class="screen active">
+        <div class="stack">
+          <button id="btn-play" class="main-btn">▶️ Spielen</button>
+          <button id="btn-dex" class="main-btn">📘 Dex</button>
+          <button id="btn-map" class="main-btn">🗺️ Karte</button>
+        </div>
+      </section>
+
+      <section id="screen-game" class="screen">
+        <div class="game-head">
+          <button id="btn-word-audio" class="audio-btn" aria-label="Wort anhören">🔊</button>
+          <button id="btn-next" class="mini-btn">⏭️</button>
+        </div>
+        <div id="monster-card" class="monster-card">😶 👾</div>
+        <div id="word-display" class="word-display">H _ se</div>
+        <div id="game-feedback" class="feedback">✨</div>
+        <div id="answer-buttons" class="answers-grid"></div>
+        <button class="mini-btn back-btn" data-back>↩️</button>
+      </section>
+
+      <section id="screen-dex" class="screen">
+        <div id="dex-grid" class="dex-grid"></div>
+        <div class="row">
+          <button id="btn-reset" class="mini-btn">🧹 Neu</button>
+          <button class="mini-btn back-btn" data-back>↩️</button>
+        </div>
+      </section>
+
+      <section id="screen-map" class="screen">
+        <div id="map-grid" class="map-grid"></div>
+        <button class="mini-btn back-btn" data-back>↩️</button>
+      </section>
+    </main>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
